@@ -1,0 +1,111 @@
+input[type="checkbox"]{
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   outline: none;
+   display: inline-block;
+   vertical-align: -10%;
+   width: 12px;
+   height: 12px;   
+   background-size: 100% auto;
+   box-sizing:border-box;
+   background-position: 0 0;
+   background-color:#fff;
+   border:solid 1px #bbb;
+}
+
+input[type="radio"]{
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   outline: none;
+   display: inline-block;
+   vertical-align: -10%;
+   width: 12px;
+   height: 12px;  
+   border-radius: 6px; 
+   background-size: 100% auto;
+   box-sizing:border-box;
+   background-position: 0 0;
+   background-color:#fff;
+   border:solid 1px #bbb;
+}
+/*复选框鼠标按下时增加的样式*/
+input[type="checkbox"]:active{
+   background-color:#e1a656;
+}
+input[type="radio"]:active{
+   background-color:#e1a656;
+}
+/*复选框选中后增加的样式*/
+input[type="checkbox"]:checked{
+   background-position: 0 -36px;
+   background-color: #e1a656;
+   border:0;
+   background-image: url(../../manage/images/ico/checked.png);
+}
+input[type="radio"]:checked{
+   background-position: 0 -36px;
+   background-color: #fff;
+   border:0;
+   background-image: url(../../manage/images/ico/checked2.png);
+}
+/*复选框选中后增加的样式*/
+input[type="checkbox"]:checked:active{
+   background-color: rgb(100,100,100);
+}
+input[type="radio"]:checked:active{
+   background-color: rgb(100,100,100);
+}
+<style>
+.guide{  width:100%;height:50px;background:#fff;border-bottom:1px solid #eee}
+.guide .navigation{width:1000px;height:40px;margin:auto;line-height:40px;}
+.guide .navigation>span{color:#999;font-size:12px;}
+.lunbo_box{
+   height:40px;width:1200px;margin:auto;background:#fff
+}
+.chanpinleimu{
+   width:198px;height:40px;line-height:40px;float:left;background:#f2f2f2;border-left:1px solid #e9e9e9;border-right:1px solid #e9e9e9;
+}
+.chanpimg{
+   width:50px;height:40px;float:left;background:url(/images/index/leimu.png) center no-repeat
+}
+.chanp_a{
+   font-size:12px;color:#333;font-weight:bold
+}
+.chanpinleimu_right{
+   width:1000px;height:40px;float:left;line-height:46px;
+}
+.page_button{border:1px solid #cccccc; background:#f3f3f3; color:#b3b3b3; font-weight:bold; display:inline-block;height:40px; line-height:40px; padding-right:16px; text-decoration:none; font-size:12px; font-weight:bold;}
+.page_button.first{ border-top-left-radius:4px; border-bottom-left-radius:4px;padding-left:0px;padding-right:16px;margin-right:5px;}
+.page_button.last{ border-top-right-radius:4px; border-bottom-right-radius:4px;padding-left:2px;padding-right:13px;margin-left:5px;}
+.page_item{background:#f3f3f3; border:1px solid #cccccc; border-left:0; border-right:0; color:#777777; display:inline-block;height:40px; line-height:40px; text-align:center;padding-right:16px;}
+
+.turn_page_form{width: 100%;padding:0 5px 5px 5px;margin-top:5px;text-align: center;margin-bottom:20px;}
+.turn_page_form .page_button{background:#fff; border:1px solid #d5d5d5; display:inline-block; height:28px; line-height:28px; font-size:12px; text-decoration:none;}
+.turn_page_form .page_button.first{border-radius:3px;padding-left:6px;padding-right:12px;width:10px;margin:0 0 0 5px;}
+.turn_page_form .page_button.last{border-radius:3px; padding-left:12px;padding-right:6px;width:10px;margin:0 0 0 5px;}
+.turn_page_form .page_button:hover{ color:#2962ff;}
+.turn_page_form .page_item{background:#fff; color:#666; border:1px solid #ccc;border-radius:3px;width:28px;display:inline-block; height:28px; line-height:28px;margin:0 0 0 5px;padding-left:0px;padding-right:0px; font-size:12px;}
+.turn_page_form .page_item_current{background:#2962ff; color:#fff; border:1px solid #ccc;border-radius:3px;width:28px;display:inline-block; height:28px; line-height:28px;margin:0 0 0 5px;padding-left:0px;padding-right:0px; font-size:12px;}
+select {
+  border: solid 1px #bbb;
+  /*样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none; 
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;  
+  padding-right: 14px;
+}
+/*隐藏ie下拉箭头*/
+select::-ms-expand { display: none; }
+
+.wzd{font-size:14px;color:#ec6400;}
+.wzd1200{width: 1200px;height:300px;background: #fff;margin: 25px auto;overflow: hidden;color:333;}
+.wzd_img{position:relative;left:30%;top:40%}
+.wzd1{position:relative;width:600px;top:20%;left:40%}
+
+.wzds{font-size:14px;color:#ec6400;}
+.wzd1200s{width: 100%;height:300px;background: #fff;margin:25px auto;overflow: hidden;color:#333;}
+.wzd_imgs{position:relative;left:30%;top:40%}
+.wzd1s{position:relative;width:600px;top:20%;left:40%}

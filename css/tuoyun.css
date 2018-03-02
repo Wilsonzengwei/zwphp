@@ -1,0 +1,115 @@
+.content_right{
+		width:1200px;margin:auto;min-height: 400px;background:#fff;
+	}
+.titleState{
+	width:1180px;
+	height:36px;
+	line-height:36px;
+	margin-top:20px;
+	margin-left:20px;
+	overflow: hidden;
+}
+.titleState div>span{
+	display:inline-block;	
+	font-size: 14px;color: #333;
+	height:36px;
+	overflow:hidden;
+}
+.titleState div{
+	display:inline-block;
+	width:390px;
+	font-size: 14px;color: #333;
+	height:36px;
+	float:left;
+	overflow:hidden;
+}
+.titleState .title_content{
+	display:inline-block;max-width:300px;color:#ec6400;font-size:14px;height:36px;overflow:hidden;
+}
+.table-state tr,td{
+	padding: 5px;
+}
+#time-state{
+	display: inline-block;
+	width:150px;
+	height: 30px;
+	line-height:30px;
+	font-size:14px;
+	text-align: center;
+	font-weight:bolder;
+	padding:5px;
+	
+}
+#time-tubiao{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height:30px;
+	font-size:14px;
+	text-align: center;
+	font-weight:bolder;
+	padding:5px;
+}
+.tubiao_content{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height:30px;
+	font-size:14px;
+	text-align: center;
+	font-weight:bolder;
+	padding:5px;
+	background:url(/images/atricle/gfd01.png) no-repeat center left;
+	color:#303030;
+}
+.tr{
+	display:inline-block;width:1200px;height:50px;
+}
+#content-state{
+	display: inline-block;	
+	width: 440px;
+	text-align: left;
+	font-size:14px;	
+	font-weight:bolder;
+	padding:5px;
+
+}
+.LocationAndTrackingProgress{
+	display: inline-block;
+	width:900px;	
+	color:#666;
+	max-height:46px;
+	text-align:center;
+	overflow: hidden;
+}
+.timeInfo{	
+	display: inline-block;height:30px;line-height:30px;width:150px;text-align:center;color:#666;font-size: 12px;
+}
+
+	.index_box{
+		width:1200px;height:90px;margin:auto;background:#fff
+	}
+	.index_logo1{
+		width:210px;height:60px;margin-top:10px;float: left;line-height:60px;font-size:18px;color:#666;font-weight:700;margin-left: 20px;background:url(/images/index/logo.png) no-repeat;
+	}
+	.index_logo2{
+		width:210px;height:60px;margin-top:10px;float: left;line-height:60px;font-size:18px;color:#666;font-weight:700;margin-left: 20px;text-indent:20px;
+	}
+	.index_search{
+		height:40px;line-height:40px;float:left;margin-top:10px;margin-left:0px;border:1px solid #2962ff;margin-top:20px;
+	}
+	.search_input{
+		width:500px;height:36px;float: left;border:none;text-indent: 15px;
+	}
+	.search_submit{
+		width:120px;height:40px;background-color:#2962ff;border:1px solid #2962ff;float: left;font-size:16px;color:#fff;background-image: url(/images/index/sousuo.png) no-repeat center;
+	}
+.acha{width:1200px;height:200px;margin:auto;position:relative}
+.acha1{margin-top:80px;text-align:center;position:relative}
+.acha1_span{position:relative;top:-15px;left:20px;font-size:14px;color:#ec6400;font-weight:bold}
+.acha2{margin-top:100px;color:#333}
+.acha3{width:400px;position:absolute;left:200px;}
+.acha3_img{position:relative;left:0px;top:12px}
+.acha3_1{position:relative;left:34px;top:-16px}
+.acha3_2{position:relative;left:34px;top:-16px}
+.acha4{width:400px;position:absolute;left:800px;}

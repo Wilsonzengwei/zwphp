@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>$title</title>
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../../css/lib.css" />
+<link rel="stylesheet" type="text/css" href="../../css/goods.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+<style type="text/css">html,body{overflow:hidden;}</style>
+<script language="javascript" src="../../js/lang/supplier_manage.php"></script>
+<script language="javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../../js/global.js"></script>
+<script language="javascript" src="../../js/supplier_manage.js"></script>
+</head>
+
+<body>
+<div id="topMenu">
+	<div id="top">
+        	<!--<div id="service_tel">$service_tel</div>-->
+            <div class="logo" style="background: #218FDE;"><img src="../../images/logo001.png"/></div>
+            <div class="link" style="width: 260px;">
+            	<a href="/supplier/?SupplierId=
+EOT;
+	echo $_SESSION['member_MemberId'];
+print <<<EOT
+" class="index fl transition" target="_blank" title="网站首页"></a>
+
+            	<a href="admin/logout.php" class="exit fl transition" title="退出登录"></a>
+            	<div id="Language" style="width: 120px;float: left;margin-top: 25px;">
+            		<div style="width: 20px;height: 20px;float: left;line-height: 30px;"><img src="/images/chinese.png"></div>
+                    <div style="width:20px;height: 20px;float: left;line-height: 30px;margin-left: 2px;"><img src="/images/spanish.png"></div>
+            		<div style="width:40px;margin-left:3px;float: left;">$language</div>
+            		
+				<br/>
+					<div id="LanguageDisplay" style="width: 100px;display:none;height:28px;border:1px solid red;float: left;position: absolute;top:45px;z-index:9;">
+						<div> <a href="javascript:;" class="list trans3 set_lang" lang="cn">$chinese</a></div>
+						<div><img src="" alt="" /><a href="javascript:;" class="list trans3 set_lang" lang="en">$spanish</a></div>
+					</div>
+				</div>
+
+            	
+                <script>
+                    $('.set_lang').click(function(){
+                        var lang = $(this).attr('lang');
+                        $.post('/',{'set_lang':lang},function(){
+                            location=location;
+                        });
+                    });
+                    $("#Language").hover(function(){
+                    	$("#LanguageDisplay").css("display","block");
+                    },function(){
+                    	$("#LanguageDisplay").css("display","none");
+                    })
+                    $("#LanguageDisplay").click(function(){
+                    	$(this).css("display","none");
+                    })
+                </script>
+                <div class="clear"></div>
+            </div>
+</div>
+
+</body>
+</html>

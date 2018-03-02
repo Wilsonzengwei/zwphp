@@ -1,0 +1,146 @@
+*{
+		margin:0;
+		padding:0;
+		font-family:'Microsoft YaHei';
+		outline: none;
+	}
+	a{
+		text-decoration:none;
+	}
+	body{
+		width:100%;
+	}
+	.clear{
+		clear:both;
+	}
+	.box{
+		width:100%;
+		margin:0 auto;
+		overflow:hidden;
+		background: #fff;
+		border-bottom:1px solid #e5e5e5;
+	}	
+	.header{
+		width:1200px;margin:0 auto 20px auto;height:80px;font-size:20px;color:#333;font-weight:bold;position:relative;
+	}
+	.header_img{
+		position:relative;top:15px;margin-right:40px;
+	}
+	.row{
+		width:600px;height:40px;margin:20px 0;
+	}
+	.rownm{
+		width:600px;height:40px;margin:0px;
+	}
+	.row_cn{
+		width:600px;height:80px;margin:20px 0;
+	}
+	d{
+		font-weight:bold;
+	}
+	.row_yx{
+		width:350px;height:40px;margin:10px 0;
+	}
+	.row_copy{
+		width:850px;height:30px;margin:15px 0;line-height:40px;
+	}
+	.inp{margin-left:160px;width:20px;height:20px;float:left;margin-top:15px}
+	.row_copy1{
+		width:600px;height:30px;margin:15px 0;line-height:40px;
+	}
+	.row2{
+		width:800px;height:20px;margin:10px 0;color:#2962ff;font-size:12px
+	}
+	.row3{
+		width:700px;max-height:40px;margin:10px 0;color:#404040;font-size:12px;line-height:20px;
+	}
+	.content{
+		width:600px;margin:30px auto 100px auto;overflow:hidden
+	}
+	.content2{
+		width:850px;margin:auto;overflow:hidden;height:200px;border-bottom:1px solid #ccc
+	}
+	.content3{
+		width:700px;margin:auto;overflow:hidden;height:250px;
+	}
+	.input_txt{
+		width:350px;height:30px;border:1px solid #ccc;text-indent:15px;font-size:12px;
+	}
+	.select_txt{
+		width:350px;height:30px;border:1px solid #ccc;padding:0 2%;font-size:12px;
+	}	
+	.select_txt2{
+		width:350px;height:30px;border:1px solid #ccc;padding:0 2%;font-size:12px;
+	}					
+	.submit_txt{
+		width:300px;height:50px;border:none;padding:0 2%;background:#2962ff;font-size:22px;color:#fff;border-radius:3px;
+	}	
+	.yhh{
+		color:red;margin-right:10px
+	}
+	
+	.row_title{
+		color:#2962ff;font-size:14px;
+	}
+	.row_title2{
+		color:#2962ff;font-size:14px;
+	}	
+	.xybleft{
+		margin-left:177px;width:20px;height:20px;float:left
+	}
+	.yx{
+		font-weight:bold;color:#2962ff;
+	}
+	.yx:hover{
+		text-decoration: underline;
+	}	
+	.input_txt2{
+		width:350px;height:30px;border:1px solid #ccc;text-indent:15px;font-size:12px;
+	}
+	
+	#btn{
+		width:350px;height:40px;margin-left:177px;margin-top:10px;background:#2962ff;border:none;color:#fff;font-size:12px;border-radius:3px;cursor:pointer;
+	}				
+	.submit_txt{
+		width:350px;height:50px;border:none;padding:0 2%;background:#2962ff;font-size:22px;color:#fff;border-radius:3px;
+	}	
+	.submit_txt2{
+		width:250px;height:50px;border:none;padding:0 2%;background:#2962ff;font-size:22px;color:#fff;border-radius:3px;
+	}	
+	.title{
+		display:inline-block;width:160px;text-align:right;height:40px;line-height:40px;font-size:12px;color:#333;
+	}	
+	.action_box{
+		width:1200px;overflow:hidden;margin:20px auto;height:40px;border-bottom:2px solid #e5e5e5;text-align:center
+	}
+	.box_mask{
+		width:1000px;margin:auto
+	}
+	.waiwei{
+		width:250px;height:38px;line-height:40px;float:left;background:#fff;border-bottom:2px solid #ff800f;text-align:center
+	}
+	.waiwei1{
+		width:250px;height:38px;line-height:40px;float:left;background:#fff;border-bottom:2px solid #fff;text-align:center
+	}
+	.neiwei{
+		width:50px;height:40px;float:left;text-align:right
+	}
+	.radius{
+		width:20px;height:20px;border-radius:20px;line-height:20px;text-align:center;background:#ff800f;font-size:12px;color:#fff;margin-top:10px;margin-left:20px
+	}
+	.radius1{
+		width:20px;height:20px;border-radius:20px;line-height:20px;text-align:center;background:#ccc;font-size:12px;color:#fff;margin-top:10px;margin-left:20px
+	}
+	.name{
+		max-width:200px;overflow:hidden;;text-align:left;height:40px;float:left;font-size:12px;color:#000;font-weight:bold
+	}
+	.name1{
+		max-width:200px;overflow:hidden;;text-align:left;height:40px;float:left;font-size:12px;color:#999;font-weight:bold
+	}	
+	.hover:hover{
+		cursor:pointer;
+		background:#0d36a6;
+	}
+	.redtext{
+		margin-left:180px;font-size:10px;color:red
+	}

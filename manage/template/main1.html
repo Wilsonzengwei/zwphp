@@ -1,0 +1,280 @@
+<!--<?php
+
+    $a1 = '2000';
+    $a2 = '3000';
+    $a3 = '4000';
+    $a4 = '5000';
+    $a5 = '6000';
+    $a6 = '7000';
+    $a7 = '8000';
+    $a8 = '9000';
+    $a9 = '10000';
+    $a10 = '11000';
+    $a11 = '12000';
+    $a12 = '13000';
+print <<<EOT
+-->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script language="javascript" src="/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+	<script src="/js/Chart.min.js"></script>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background:#ececec;
+	}
+	.yy{
+		border:1px solid;
+	}	
+	.yxx{
+		cursor:pointer;
+	}
+	.add{
+		position:absolute;
+		right:20px;
+		top:-5px;
+		font-size:16px;
+		font-weight:bold;
+		color:#fff;
+		font-style:normal
+	}
+	.yy1{
+		position:relative;
+		transition:all 3s;
+		height:40px;
+	}
+	.yy2{
+		margin-left:42px;
+		border-left:1px solid #202020;
+
+	}
+	.y{
+		background:#202020;
+	}
+	.y ul{
+		width:400px;
+		margin-left:-20px;
+		background:#666;
+	}
+	.x{
+		display: none;
+		line-height:48px;
+		list-style:none;
+		background:#161616;
+	}
+	.z{
+		display:none;
+		line-height:48px;
+		list-style:none;
+		margin-left:60px;
+		background:#000
+	}	
+</style>
+<body>
+	<div style="min-width:1200px;height:80px;background:#004e90;position:relative">
+		<div style="width:15%;height:70px;float:left;margin-top:10px;margin-left:10px">
+			<div style="width:50px;height:50px;border-radius:50px;border:1px solid #d0d1d1;float:left">
+				<img style="width:100%;height:100%;border-radius:50px" src="/images/6.jpg" alt="">
+			</div>	
+			<div style="float:left;padding:10px">
+				<div style="font-size:12px;color:#fff">xiaoying</div>
+				<div style="font-size:12px;color:#0b8fff">超级管理员</div>
+			</div>
+		</div>
+		<div style="float:left;width:55%;margin-top:20px;text-align:center">
+			<div style="color:#fff;font-size:24px;">鹰洋国际后台管理系统</div>	
+		</div>
+		<div style="height:60px;float:right;margin-top:20px;">
+			<div style="height:30px;float:left;color:#fff;font-size:12px;line-height:30px;margin-right:20px">
+				<div style="width:20px;height:20px;overflow:hidden;background:url(/images/hometest.png);float:left"></div>
+				<a href=""><div style="float:left;margin-top:-3px;margin-left:5px;color:#fff">鹰洋首页</div></a>
+			</div>
+			<div style="height:30px;float:left;color:#fff;font-size:12px;line-height:30px;margin-right:20px;position:relative">
+				<div style="width:20px;height:20px;overflow:hidden;background:url(/images/hometest.png);float:left;">
+					<a href=""><div style="width:15px;height:15px;border-radius:15px;position:absolute;top:-5px;left:10px;background:#fff;text-align:center;line-height:15px;color:#004e90">1</div></a>
+				</div>
+				<a href=""><div style="float:left;margin-top:-3px;margin-left:5px;color:#fff">邮件</div></a>
+			</div>
+			<div style="height:30px;float:left;color:#fff;font-size:12px;line-height:30px;margin-right:20px;position:relative">
+				<div style="width:20px;height:20px;overflow:hidden;background:url(/images/hometest.png);float:left;">
+					<a href=""><div style="width:15px;height:15px;border-radius:15px;position:absolute;top:-5px;left:10px;background:#fff;text-align:center;line-height:15px;color:#004e90">1</div></a>
+				</div>
+				<a href=""><div style="float:left;margin-top:-3px;margin-left:5px;color:#fff">通知</div></a>
+			</div>
+			<div style="height:30px;float:left;color:#fff;font-size:12px;line-height:30px;margin-right:20px">
+				<div style="width:20px;height:20px;overflow:hidden;background:url(/images/hometest.png);float:left"></div>
+				<a href="admin/logout.php"><div style="float:left;margin-top:-3px;margin-left:5px;color:#fff">退出</div></a>
+			</div>
+		</div>		
+	</div>
+	<div style="min-width:1200px;min-height:100px;position:relative;">
+		<div style="width:15%;min-height:1291px;background:#202020;font-size:12px;float:left;overflow:hidden">			
+			<ul class="yxx">
+				<li class="y home" style="line-height:48px;list-style:none;">
+				<div class="yy1">
+					<i style="display:inline-block;width:22px;height:18px;background:url(/images/manage/left_bg01.png) no-repeat;position:absolute;top:10px"></i><a style="display:inline-block;margin-top:-5px;color:#fff;text-decoration:none;margin-left:30px">主页</a>
+				</div>
+				</li>
+<!--
+EOT;
+	$i=0;
+    $lbj=0;
+	foreach($manage_menu as $group_key=>$group){
+		if(implode($group)==''){
+			continue;
+		}
+		$menu_value=cut_str(get_lang('menu.'.$group_key),4,0);
+        $logo_ary = $menu_logo_ary[$group_key];
+        $logobg = is_file($logo_ary[0]) ? $logo_ary[0] : images/ico/menu_set_ico.jpg;
+        $logocurbg = is_file($logo_ary[1]) ? $logo_ary[1] : images/ico/menu_set_ico_cur.png;
+        $leftbg = $left_bg_ary[$lbj];
+        $lbj = $lbj>=count($left_bg_ary)-1 ? 0 : ++$lbj;
+        $test =count($left_bg_ary);
+        $style = "style='background:#fefefe url($logobg) center no-repeat;'";
+        $class = $i==0 ? ' class="dmenu nobdt"':'class="dmenu"';
+
+print <<<EOT
+-->
+				<li class="y" style="line-height:48px;list-style:none;">
+				<div class="yy1">
+					<i style="display:inline-block;width:22px;height:18px;background:url(/images/manage/left_bg01.png) no-repeat;position:absolute;top:10px"></i><a class="Navigation1Txt" style="display:inline-block;margin-top:-5px;color:#fff;text-decoration:none;margin-left:30px">$menu_value</a><i class="add">+</i>
+				</div>
+
+					<ul>						
+<!--
+EOT;
+	$i++;
+	foreach($group as $key=>$value){
+		if(!is_array($value)){
+			continue;
+		}
+		$v=get_lang($value[1]);
+		if($value[2]!=1){
+
+print <<<EOT
+-->
+						<li class="x">
+						<div class="yy2">
+
+							<a data="$value[0]" class="Navigation2Txt" style="display:inline-block;margin-top:-10px;color:#fff;text-decoration:none;margin-left:10px">$v</a>
+
+							
+						</div>							
+						</li>
+<!--
+EOT;
+	}
+}
+
+print <<<EOT
+-->
+						
+					</ul>
+				</li>
+<!--
+EOT;
+
+}
+
+print <<<EOT
+-->
+
+				
+
+			</ul>
+		</div>	
+		<div style="width:81%;float:left;margin-left:30px;">
+			<div style="height:40px;line-height:40px;border-bottom:1px solid #e5e5e5;color:#666;font-size:12px"><i style="display:inline-block;width:22px;height:18px;background-images:url(/images/manage/left_bg01.png) no-repeat;"></i><span class="Navigation1">主页</span>><span class="Navigation2"></span></div>
+ 			<iframe id="form" style="width:100%;min-height:1260px" src="system/index.php" frameborder="0"></iframe>
+ 			<div style="width:100%;height:40px;font-size:12px;color:#666;text-align:center;line-height:40px;position:fixed;bottom:0px;left:200px;background:#ececec;border-top:1px solid #dcdcdc">深圳（前海）鹰洋国际贸易有限公司  粤ICP备17118012号</div> 			
+        </div>
+		
+	</div>
+</body>
+</html>
+<script>
+$(function(){
+	$('.yy2').click(function(){
+		var a=$(this).children('a').attr('data');	
+		$("#form").attr('src',a);
+	})
+	$('.home').click(function(){
+		$("#form").attr('src','system/index.php');
+	})
+	var flag=true;
+	$(".y").click(function(){	
+		$('.Navigation1').html('');
+		$('.Navigation2').html('');
+		var txt=$(this).find('a').html();
+		$('.Navigation1').html(txt);
+	console.log(flag);		
+		$(this).attr('data','1');
+		if(flag){		
+			$('.yxx').find(".y").css('background','#202020');
+			$('.yxx').find(".y ul").css('background','#202020');
+			$('.yxx').find(".yy1").css('border-left',"1px solid #202020");
+			$('.yxx').find(".yy1").css('border-bottom',"1px solid #202020");
+			$('.yxx').find(".yy1").css('background',"#202020");	
+			$('.yxx').find(".yy1").css('transition',"background 1s");		
+			$(this).css("background","#131313");
+			$(this).children('ul').css("background","#161616");
+			$(this).find(".yy1").css('border-left',"1px solid #006ac3");
+			$(this).find(".yy1").css('border-bottom',"1px solid #006ac3");
+			$(this).find(".yy1").css('border-bottom-left-radius','5px');
+			$(this).find(".yy1").css('background','rgba(90,164,247,.7)');
+			$(this).find(".yy1").css('transition',"background 1s");
+			$(this).find(".add").html("-");
+			$(this).find(".x").stop(true,true).show(500);	
+			flag=false;
+		}else{	
+			$(this).find(".yy1").css('background','#202020');
+			$(this).find(".yy1").css('transition',"background 1s");		
+			$(this).find(".x").stop(true,true).hide(500);
+			$(this).find(".add").html("+");
+			flag=true;
+		}	
+	})
+	$(".x").hover(function(){
+		event.stopPropagation();
+		var b=$(this).attr('border');
+		if(b==1){
+			$(this).css('background','#000');
+			$(this).find('.yy2').css('border-left','1px solid #004E90');
+		}else{
+			$(this).css('background','#000');
+			$(this).find('.yy2').css('border-left','1px solid #006ae1');
+		}		
+	},function(){
+		var b=$(this).attr('border');		
+		if(b==1){
+			$(this).css('background','#161616');
+			$(this).find('.yy2').css('border-left','1px solid #004E90');
+		}else{
+			$(this).css('background','#161616');
+			$(this).find('.yy2').css('border-left','1px solid #202020');
+		}		
+	})
+	$(".x").click(function(event){
+		var txt=$(this).find('a').html();
+		$('.Navigation2').html(txt);
+		$('.yxx').find(".yy2").css('border-left','1px solid #202020');
+		$('.yxx').find(".x").attr('border','2');
+		$(this).attr('border','1');
+		 event.stopPropagation();
+		 $('.yxx').find(".x").css('border','1px');
+		 $(this).find('.yy2').css('border-left','1px solid #004E90');
+	})	
+})	
+</script>
+
+<!--
+EOT;
+?>-->

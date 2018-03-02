@@ -1,0 +1,9 @@
+.slideBox{width:auto; overflow:hidden; position:relative;} 
+.slideBox .hd{height:23px; overflow:hidden; position:absolute; bottom:15px; z-index:1;} 
+.slideBox .hd ul{overflow:hidden; zoom:1; float:left;} 
+.slideBox .hd ul li{float:left; margin-right:10px; width:16px; height:16px; -webkit-border-radius:15px; -moz-border-radius:15px; border-radius:15px; background:#f1f1f1; cursor:pointer;}
+.slideBox .hd ul li:first-child{margin-left:0;}
+.slideBox .hd ul li.on{ background:#cf81a5; color:#fff;} 
+.slideBox .bd{position:relative; height:100%; z-index:0;}
+.slideBox .bd ul, .slideBox .bd ul li, .slideBox .bd ul li a, .slideBox .bd img{width:auto;}
+.slideBox .bd ul li a{display:block;}

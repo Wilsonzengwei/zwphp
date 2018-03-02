@@ -1,0 +1,299 @@
+.displayB{
+	display: block;
+}
+.displayN{
+	display: none;
+}
+.refer{
+	position: absolute;
+	right: 20px;
+	top: 60px;
+	cursor: pointer;
+}
+.rate {
+	width: 420px;
+	border: 1px solid #b5b5b5;
+	padding: 15px 0;
+	box-shadow: 2px 2px 5px #B5B5B5;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-top: 80px;
+	background-color: #fff;
+	display: none;
+}
+
+.rate-w {
+	width: 370px;
+	margin: 0 auto;
+}
+
+.rete-title {
+	margin: 5px;
+	font-size: 14px;
+}
+
+.rate-con {
+	border-bottom: 1px solid #b5b5b5;
+	padding: 0 0 15px 5px;
+}
+
+.rate-ul {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+.rate-ul li {
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	float: left;
+	margin: 5px 0 10px 0;
+	width: 180px;
+	height: 11px;
+	line-height: 11px;
+	font-size: 12px;
+	color: #333;
+	font-family: Verdana;
+}
+
+.rate-ul li img {
+	margin-right: 5px;
+}
+
+.tips {
+	font-size: 12px;
+}
+
+.goods_desc{
+	position: relative;
+}
+
+.over-flow {
+	overflow: hidden;
+}
+
+.labColor {
+	float: left;
+}
+
+.imgColor {
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin: 0 10px 0 0;
+	border: 1px solid #bfbfbf;
+	cursor: pointer;
+}
+
+.imgColor img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.divSale {
+	float: left;
+	line-height: 16px;
+	padding: 2px 20px 2px 10px;
+	border-right: 1px solid #bfbfbf;
+	cursor: pointer;
+}
+.divSale_1 {
+	float: left;
+	line-height: 16px;
+	padding: 2px 20px 2px 10px;
+	
+	cursor: pointer;
+}
+.divSale:hover {
+	background-color: #fff6e6;
+}
+
+.colorPrice {
+	color: #9b0000;
+}
+
+.saleClick {
+	background-color: #fff6e6;
+}
+
+.transport{
+	float: left;
+	padding: 7px 13px;
+	border: 1px solid #b5b5b5;
+	margin: 2px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.transportClick{
+	border: 1px solid #f39800;
+}
+
+.transport:hover{
+	border: 1px solid #f39800;
+}
+
+.delivery{
+	font-weight: bold;
+	font-size: 14px;
+	width: auto;
+}
+
+.deliveryClick{
+	cursor: pointer;
+}
+
+.fine{
+	font-weight: normal;
+}
+
+.express{
+	color: #2271dc;
+}
+
+.day{
+	color: #898989;
+}
+
+.question{
+	width: 13px;
+	height: 13px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #b2b2b2;
+	float: left;
+	color: #f39800;
+	margin: 2px;
+}
+
+.deliveryDiv{
+	position: relative;
+}
+.deliveryTips{
+	width: 240px;
+	position: absolute;
+	z-index: 1;
+	background-color: #fff;
+	padding: 10px;
+	border: 1px solid #c9c9c9;
+	margin: 5px 0 0 80px;
+	box-shadow: 2px 2px 5px #B5B5B5;
+	display: none;
+}
+
+.mode{
+	position: fixed;
+	z-index: 3;
+	width: 700px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #fff;
+	padding: 50px 50px 100px 50px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #a0a0a0;	
+    box-shadow: 2px 2px 5px #B5B5B5;
+    display: none;
+}
+
+.maxW-150{
+	
+    max-width: 150px;
+}
+
+.Bold14{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.place{
+	border: 1px solid #bfbfbf;
+	padding: 5px 10px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.place img{
+	vertical-align:middle;
+	margin-top: -1px;
+}
+
+.row{
+	margin: 0 0 30px 0;
+}
+
+.clearance{
+	border: 1px solid #b5b5b5;
+}
+
+.clearanceClick{
+	border: 1px solid #f39800;
+}
+
+.clearance:hover{
+	border: 1px solid #f39800;
+}
+
+.tabDiv{
+	padding-bottom: 40px;
+	border-bottom: 1px solid #B5B5B5;
+}
+
+.expressTab{
+	border-collapse:collapse;
+}
+
+.expressTab tr{
+	width: 100%;
+}
+
+.expressTab td{
+	padding: 5px 10px;
+	height: 40px;
+	text-align: center;
+	width: 16%;
+}
+
+.tabTitle{
+	border-bottom: 2px solid #c9c9c9;
+	padding-bottom: 5px;
+}
+
+.tdImg{
+	width: 150px;
+	/*float: left;*/
+}
+
+.trClick{
+	background-color: #f3f2f2;
+}
+
+.modeBtn{
+	width: 80px;
+	height: 40px;
+	background-color: #fff;
+	border: 1px solid #b5b5b5;
+	position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin: 0 0 20px -40px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.closeDiv{
+	width: 35px;
+	height: 40px;
+	font-size: 40px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #999;
+	cursor: pointer;
+}

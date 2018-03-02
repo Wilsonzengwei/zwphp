@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="136px" height="136px">
+	<style>
+		@keyframes circle_rotate {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+		@keyframes circle_rotate_anti {
+			from {
+				transform: rotate(360deg);
+			}
+			to {
+				transform: rotate(0deg);
+			}
+		}
+		circle {
+			fill: none;
+			stroke: #3599f1;
+			stroke-dasharray: 390,390;
+			stroke-dashoffset: 300;
+			stroke-width: 7px;
+			stroke-linecap: butt;
+
+			transform-origin: center center;
+			
+		}
+		#c1 {
+			animation: circle_rotate 3s linear 0s infinite normal backwards;
+		}
+		#c2 {
+			stroke-dashoffset: 250;
+			stroke-opacity: 0.3;
+			animation: circle_rotate_anti 9s linear 0s infinite normal backwards;
+		}
+	</style>
+	<svg id="circle_main">
+		<circle id="c1" cx="68" cy="68" r="62"></circle>
+		<circle id="c2" cx="68" cy="68" r="62"></circle>
+	</svg>
+</svg>

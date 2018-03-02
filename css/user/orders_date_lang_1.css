@@ -1,0 +1,75 @@
+.index_box{
+		width:1200px;height:90px;margin:auto;
+	}
+	.index_logo{
+		width:210px;height:60px;background:url(/images/index/logo.png) no-repeat;float:left;margin-top:10px;
+	}
+	.index_search{
+		height:40px;line-height:40px;float:left;margin-top:10px;margin-left: 70px;border:1px solid #2962ff;margin-top:20px;
+	}
+	.search_input{
+		width:500px;height:36px;float: left;border:none;text-indent: 15px;
+	}
+	.search_submit{
+		width:120px;height:40px;background:#2962ff;border:1px solid #2962ff;float: left;font-size:16px;color:#fff;
+	}	
+	.bbg{
+		width:1200px;max-height:1000px;overflow:hidden;margin:30px auto 0 auto;background:#fff;border-bottom:1px solid #e5e5e5;margin-bottom: 10px;
+	}
+	.bbg2{
+		width:1200px;min-height:400px;overflow:hidden;margin:0 auto 30px auto;background:#fff;
+	}
+	.he_mask{
+		position:relative;overflow:hidden;height:30px;line-height:30px;
+	}
+	.he_mask2{
+		position:relative;overflow:hidden;min-height:30px;
+	}
+	.b1{
+		margin-top:50px;margin-left:50px;overflow:hidden;
+	}
+	.b2{
+		width:150px;height:150px;float:left;border:1px solid #e5e5e5;
+	}
+	.b2_img{
+		width:100%;height:100%
+	}
+	.b3{
+		min-height:150px;float:left;margin-left:10px
+	}
+	.pt{
+		float:left;width:790px;padding-bottom:20px
+	}
+	.sr{
+		margin-right:15px
+	}
+	.ss{
+		color:#ff800f;padding:0 5px
+	}
+	.span_title{
+		display:inline-block;height:25px;text-align:right;font-size:12px;color:#666;float:left;width:130px;
+	}
+	.span_title3{
+		display:inline-block;width:130px;height:25px;text-align:right;font-size:12px;color:#666;float:left;margin-left:10px;
+	}
+	.he1{
+		float: left;font-size: 12px;
+	}
+	.hhe{
+		width:800px;height:25px;border:none;background:#fff;color:#666;font-size:12px;float:left;
+	}
+	.hhe2{
+		height:25px;border:none;background:#fff;color:#333;font-size:12px;float:left;
+	}
+	.ca_b2{
+		font-size:12px;color:#e60012;float:left;
+	}
+	.bg_title1{
+		height:60px;line-height:60px;color:#333;font-size:14px;font-weight:bold;text-indent:20px;
+	}
+	.he_sm{
+		width:325px;float:left;height:25px;overflow:hidden;
+	}
+	.he_big{
+		width:500px;float:left;height:25px;overflow:hidden;
+	}

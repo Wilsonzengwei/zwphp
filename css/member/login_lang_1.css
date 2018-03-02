@@ -1,0 +1,122 @@
+*{
+		margin:0;
+		padding:0;
+		font-family:'Microsoft YaHei';
+		outline: none;
+	}
+	a{
+		text-decoration:none;
+	}
+	body{
+		width:100%;background:#fff;
+	}
+	.clear{
+		clear:both;
+	}
+	.box{
+		width:100%;
+		margin:0 auto;
+	}
+	.username{
+	    display: inline-block;
+	    float:left;
+	    width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+	    color: #fff;
+	    background: #ddd;
+	    text-align: center;
+	}
+	.username1{
+	    display: inline-block;
+	    float: left;
+	    width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+	    color: #fff;
+	    background: #ddd;
+	    text-align: center;
+	}
+	.username2{
+	    display: inline-block;
+	    width: 60px;
+	    height: 40px;
+	    text-align:center;
+	    line-height: 40px;
+	    color: #007cff;
+	    font-size:14px;
+	}
+	input[type="submit"]{
+		cursor:pointer;
+	}
+	.username_left{
+	    display: inline-block;
+	    height: 40px;
+	    line-height: 40px;
+	    color:#999;
+	    text-align: left;
+	    font-size:14px;
+	    padding-left: 5px;
+	    float:left;
+	}
+	.username_left:hover{
+		color:#007cff;
+	}
+	.username_right{
+	    display: inline-block;
+	    height: 40px;
+	    line-height: 40px;
+	    color: #999;
+	    text-align: right;
+	    float:right;
+	    font-size:14px;
+	    padding-right:5px;
+	}
+	.username_right:hover{
+		color:#007cff;
+	}
+	.loinput{
+		width:230px;height:40px;border:none;float:left;color:#666;
+	}
+	.loinput2{
+		width:190px;height:40px;color:#a2a2a2;border:none;background:#ffeef8;font-size:12px;
+	}
+	.login{
+		width:100%;height:40px;margin-top:30px;border:none;padding:0 20px;border-radius:3px;background:#007cff;font-size:18px;color:#fff;cursor:pointer;
+	}
+	.login:hover{
+		background:#0a5fb9;
+	}	
+	.error{
+		display:none;background:#ffeef8;margin-top:16px
+	}
+	.header{
+		width:1200px;margin:0 auto 20px auto;height:80px;font-size:20px;color:#333;font-weight:bold;position:relative;
+	}
+	.header_img{
+		position:relative;top:15px;margin-right:40px;
+	}
+	.content{
+		min-height:400px;background:url(/images/login/loginBg.jpg);
+	}
+	.jd{
+		width:1200px;height:540px;margin:0 auto;position:relative
+	}
+	.login_mask{
+		width:350px;height:420px;position:absolute;right:25px;top:42px;background:#fff;
+	}
+	.login_box{
+		width:300px;height:420px;margin:0 auto
+	}
+	.login_title{
+		color:#3894e1;font-size:24px;text-indent:10px;margin-top:20px;line-height:50px
+	}
+	.in{
+		border:1px solid #ccc;margin-top:20px
+	}
+	.fot{
+		color:#999;font-size:14px;text-align:right;position:absolute;right:30px;bottom:15px
+	}
+	.hiai{
+		display:none;
+	}

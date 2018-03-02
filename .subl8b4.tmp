@@ -1,0 +1,356 @@
+<?php 
+include("/inc/include.php");
+include('/inc/set/ext_var.php');
+
+
+
+include("/inc/common/header.php");
+include("/inc/common/search_header.php");
+
+?>
+<script src="/js/index.js"></script>
+<script src="/js/action.js"></script>
+<script language="javascript" src="/js/manage.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<div class="mask1">
+	<div class="lunbo_box">
+	<div class="chanpinleimu"><div class="chanpimg"></div><a class="chanp_a" href="">产品类目</a></div>
+	<div class="chanpinleimu_right" style=""><a class="chanp_txt" href="">EAGLE HOME</a></div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="mask">	
+	<div class="content-top">	
+		<div class="content-center">		
+		<div  class="center-center">	
+			<div id="center-bg-left" class="center-bg-left">					
+				<?php 
+					foreach((array)$All_Category_row['0,'] as $k => $v){ 
+						$name = $v['Category_lang_1'];
+						$vCateId = $v['CateId'];
+						$url = get_url('product_category',$v);
+						$count_where="(CateId in(select CateId from product_category where UId like '%{$v[UId]}{$vCateId},%') or CateId='{$vCateId}')";
+						$logo_ary = $menu_logo_ary1[$k];
+				        $logobg = $logo_ary[0];
+				        //var_dump($logo_ary[0]);exit;
+				        $logocurbg = $logo_ary[1];
+						if($name != 'EAGLE HOME'){       
+					       
+				?>		
+							<div class="top_list" bg='<?=$logobg?>' curbg='<?=$logocurbg?>'><div class="y1" style="width:50px;height:36px;float:left;background:url(<?=$logobg?>) center no-repeat"></div><a class="y2" style="font-size:12px;color:#333;" href="<?=$url; ?>"><?=$name?></a>
+							<?php if($All_Category_row['0,'.$vCateId.',']){ ?>
+								
+								<span class="sec_list">
+									<div class="sec_list_bg">
+									<?php
+					                    $num=0; 
+					                    foreach((array)$All_Category_row['0,'.$vCateId.','] as $k1 => $v1){ 
+					                    $name1 = $v1['Category_lang_1'];
+					                    $v1CateId = $v1['CateId'];
+					                    $url1 = get_url('product_category',$v1);
+					                    if($num > 8) continue;
+					                    if((array)$All_Category_row['0,'.$vCateId.','.$v1CateId.',']){
+					                    $num++;
+				                    ?>				
+										<div class="sec_list_sm">
+											<div class="sec_list_sm_div1"><a class="sec_list_sm_div1_a" href="<?=$url1; ?>"><?=$name1?></a><i style="color:#333;font-size:10px;margin-left:20px;" class="icon iconfont icon-youjiantou"></i></div>							 
+											<div class="sec_list_sm_div2">					<?php 
+													foreach((array)$All_Category_row['0,'.$vCateId.','.$v1CateId.','] as $k2 => $v2){ 
+		                                                    if($k2>3) continue;
+		                                                    $name2 = $v2['Category_lang_1'];
+		                                                    $v2CateId = $v2['CateId'];
+		                                                    $url2 = get_url('product_category',$v2);
+                                                  
+                                                ?>
+												<a class="sec_list_sm_div2_a"  href="<?=$url2; ?>"><?=$name2?></a>		
+												<?php }?>				
+											</div>								
+										</div>
+										<?php }}?>				
+									</div>
+								</span>
+							<?php }?>					
+							</div>
+					<?php }}?>
+				
+					
+							
+				<div id="center-img" class="center-img">
+					<span class="center_prev" id="center_prev"></span>
+					<span class="center_next" id="center_next"></span>
+					<div class="center-li" id="center-li">	
+					<?php 
+						for ($i=0; $i < 5; $i++) { 
+							$ad_1 = $db->get_one('ad','AId=1');
+		                    if(!is_file($site_root_path.$ad_1['PicPath_'.$i]))continue;
+		                
+					?>			
+						<li data="<?=$i?>"></li>
+					<?php }?>					
+									
+					</div>			
+					<?php 
+						for ($i=0; $i < 5; $i++) { 
+							$ad_1 = $db->get_one('ad','AId=1');
+		                    if(!is_file($site_root_path.$ad_1['PicPath_'.$i]))continue;
+		                
+					?>		
+						<a href="<?=$ad_1['Url_'.$i] ? $ad_1['Url_'.$i] : 'javascript:;'; ?>" target="_blank">
+							<img src="<?=$ad_1['PicPath_'.$i]?>" data="<?=$i?>">
+						</a>
+					<?php }?>	
+						
+						
+								
+				</div>							
+		</div>
+	</div>
+	</div>
+	</div>
+
+</div>
+<div class="clear"></div>	
+<div class="mask">
+<div class="sm_img"><img src="images/index/xiaotu.jpg" alt=""></div>
+</div>
+<div class="mask" style="width:100%;background:url(images/index/bodybg.png);overflow:hidden">
+<div class="brand">
+		<div class="brand_bg">
+			<i class='bg'></i>
+			<span></span>
+			<a href="/supplier_manage/supplier.php">更多<i class="icon iconfont icon-left"></i></a>			
+		</div>
+		<div class="hot_pro">	
+			<?php
+				$where = "IsSupplier=1 and Is_Business_License='1'";
+				$supplier_row = $db->get_limit("member",$where,"*","RegTime desc","0","16");
+				for ($i=0; $i < count($supplier_row); $i++) {
+					if($supplier_row[$i]['LogoPath_1'] == ""){
+
+					}
+					//var_dump($supplier_row[$i]['LogoPath_1']);
+			?>	
+			<div class="hot_pro_bg">
+				<div class="hot_pro_bg_top">
+					<a href="/member_admin/index.php?SupplierId=<?=$supplier_row[$i]['MemberId']?>&act=1"><img src="<?=$supplier_row[$i]['LogoPath_1']?>" alt=""></a>
+				</div>			
+			</div>
+			<?php }?>
+		</div>
+	</div>
+	</div>
+	<div class="clear"></div>
+	<div class="mask">
+
+	<div class="selling">
+		<div class="brand_bg">
+			<i class='bg'></i>
+			<span></span>
+			<a href="/products.php?&act=new">更多<i class="icon iconfont icon-left"></i></a>			
+		</div>
+		<div class="selling_bg">
+
+		<?php 
+			$ind_hot_product_row = $db->get_limit('product','IsUse=2','*','AccTime desc',0,10);
+			foreach((array)$ind_hot_product_row  as $k => $v){ 
+			$name = $v['Name_lang_1'];
+			$desc = $v['BriefDescription'.$lang];
+			$url = get_url('product',$v);
+			$img = $v['PicPath_0'];
+			$price = $v['Price_1'];
+			$ProId = $v['ProId'];
+		?>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='<?=$url?>' class="selling_img">
+						<img src="<?=$img?>" alt="">
+					</a>
+					<div class="Commodity_price"><a href="<?=$url?>"><?=$price?></a></div>
+					<div class="Commodity_name"><a href="<?=$url?>"><?=$name?></a></div>
+				</div>				
+			</div>	
+		<?php }?>
+		</div>
+	</div>
+	</div>
+	<div class="clear"></div>
+	<div class="mask">
+	<div class="selling1">
+		<div class="brand_bg">
+			<i class='bg'></i>
+			<span></span>
+			<a href="/products.php?&act=Selling">更多<i class="icon iconfont icon-left"></i></a>			
+		</div>
+		<div class="selling_bg">
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="clear"></div>
+	<div class="mask">
+	<div class="selling2">
+		<div class="brand_bg">
+			<i class='bg'></i>
+			<span></span>
+			<a href="/products.php?&act=Price">更多<i class="icon iconfont icon-left"></i></a>			
+		</div>
+		<div class="selling_bg">
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+			<div class="selling_content">
+				<div class="selling_center">
+					<a href='' class="selling_img">
+						<img src="images/index/selling.png" alt="">
+					</a>
+					<div class="Commodity_price"><a href="">US $30.50</a></div>
+					<div class="Commodity_name"><a href="2">太阳镜男士偏光眼镜墨镜个性潮人2017新款开车眼睛司机驾驶蛤</a></div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	</div>	
+	<div class="clear"></div>
+	<div class="clear"></div>
+	<div class="mask2" style="width:100%;background:#fff;overflow:hidden">
+	<div class="tail" style="margin:0 auto">
+		<div class="tail_mask">
+			<div class="tail_mask_bg">
+				<div class="tail_mask_bg_img">
+					<img src="images/index/ValueforMoney.png" alt="">
+				</div>
+				<div class="tail_mask_introduce">超值性价比</div>
+				<div class="tail_mask_advantage">我们提供具有竞争力价格的产品来满足不同用户的需求</div>
+			</div>
+			<div class="tail_mask_bg">
+				<div class="tail_mask_bg_img">
+					<img src="images/index/GlobalDistribution.png" alt="">
+				</div>
+				<div class="tail_mask_introduce">全球配送</div>
+				<div class="tail_mask_advantage">支持3种语言切换,我们可将货物运送到200多个国家的地区</div>
+			</div>
+			<div class="tail_mask_bg">
+				<div class="tail_mask_bg_img">
+					<img src="images/index/SecurePayment.png" alt="">
+				</div>
+				<div class="tail_mask_introduce">安全支付</div>
+				<div class="tail_mask_advantage">支持多种付款方式，确保您的个人财产和信息的安全性</div>
+			</div>
+			<div class="tail_mask_bg">
+				<div class="tail_mask_bg_img">
+					<img src="images/index/RestAssuredShopping.png" alt="">
+				</div>
+				<div class="tail_mask_introduce">放心购物</div>
+				<div class="tail_mask_advantage">我们的买家保护涵盖您从点击到交货的购买安全</div>
+			</div>
+			<div class="tail_mask_bg">
+				<div class="tail_mask_bg_img">
+					<img src="images/index/HelpCenter.png" alt="">
+				</div>
+				<div class="tail_mask_introduce">全天候帮助中心</div>
+				<div class="tail_mask_advantage">客服在线解答，全天候的帮助，方便您顺利购物</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Live800在线客服图标:默认图标[浮动图标]开始-->
+<div style='display:none;'>< a href=' '>网页聊天</ a></div><script language="javascript" src="http://chat.live800.com/live800/chatClient/floatButton.js?jid=5513164191&companyID=846315&configID=126818&codeType=custom"></script><div style='display:none;'>< a href='http://en.live800.com'>live chat</ a></div>
+<!-- 在线客服图标:默认图标结束-->
+<div style='display:none;'><a href='http://www.live800.com'>客服系统</a></div>
+<?php include("/inc/common/footer.php");?>

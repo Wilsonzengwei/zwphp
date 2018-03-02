@@ -1,0 +1,112 @@
+.titleState{
+	margin-top:39px;
+	margin-left:20px;
+	width:100%;
+}
+.titleState span{
+	display:inline-block;
+	width:33%;
+}
+
+.mid{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.right{
+	float: right;
+	margin-right: 13px;
+}
+
+.table-state tr td{
+	padding: 5px;
+}
+
+#time-state{
+	display: inline-block;
+	width: 30px;
+	height: 20px;
+	font-size:14px;
+	text-align: center;
+	margin-left: 30px;
+	font-weight:bolder;
+	
+}
+
+#content-state{
+	display: inline-block;	
+	width: 250px;
+	text-align: center;
+	font-size:14px;
+	margin-left: 20px;
+	font-weight:bolder;
+
+}
+
+.textCenter{
+	text-align: center;	
+}
+
+.sign-state{
+	width: 40px;
+}
+
+
+
+.LocationAndTrackingProgress{
+	display: inline-block;
+	margin-left:10px;	
+	color:#ec6400;
+}
+
+
+.timeInfo{
+	display: inline-block;
+	height: 30px;
+	width: 70px;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.tips-state{
+	width: 100%;
+	text-align: center;
+	color: #313131;
+	
+	font-size: 12px;
+	/*border-bottom: 1px solid #ddd;*/
+}
+
+.cost{
+	width: 100%;
+	border-collapse:separate;
+	border-spacing:0px 10px;
+}
+
+.cost td{
+	height: 30px;
+}
+
+.cost tr{
+	background-color: #ffd4d4;
+	margin: 10px 0;
+}
+
+.tips-cost{
+	width: 60%;
+	padding-left: 100px;
+}
+
+.num-cost{
+	width: 40%;
+    text-align: right;
+}
+
+.lab-cost{
+	margin: 0 10px 0 35px;
+    color: #B50C08;
+}

@@ -1,0 +1,325 @@
+<!--<?php
+
+    $a1 = '2000';
+    $a2 = '3000';
+    $a3 = '4000';
+    $a4 = '5000';
+    $a5 = '6000';
+    $a6 = '7000';
+    $a7 = '8000';
+    $a8 = '9000';
+    $a9 = '10000';
+    $a10 = '11000';
+    $a11 = '12000';
+    $a12 = '13000';
+    $UserId = $_SESSION['ly200_AdminUserId'];
+    $UserName = $_SESSION['ly200_AdminUserName'];
+    $admin_info_row = $db->get_one("admin_info","UId='$UserId'");
+    $ACharater = $admin_info_row['ACharater'];
+print <<<EOT
+-->
+
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script language="javascript" src="/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+	<script src="/js/Chart.min.js"></script>
+	<script language="javascript" src="../js/lang/manage.php"></script>
+	<script language="javascript" src="../js/global.js"></script>
+	<script language="javascript" src="../js/manage.js"></script>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background:#ececec;
+	}
+	.yy{
+		border:1px solid;
+	}	
+	.yxx{
+		cursor:pointer;
+	}
+	.add{
+		position:absolute;
+		right:20px;
+		top:0px;
+		font-size:16px;
+		font-weight:bold;
+		color:#fff;
+		font-style:normal
+	}
+	.yy1{
+		position:relative;
+		padding-left: 10px;
+		transition:all 3s;
+		height:50px;
+	}
+	.yy2{
+		margin-left:42px;
+		padding-left: 10px;
+		border-left:1px solid #202020;
+
+	}
+	.y{
+		background:#202020;
+	}
+	.y ul{
+		width:400px;
+		margin-left:-20px;
+		background:#666;
+	}
+	.x{
+		display: none;
+		line-height:48px;
+		list-style:none;
+		background:#161616;
+	}
+	.z{
+		display:none;
+		line-height:48px;
+		list-style:none;
+		margin-left:60px;
+		background:#000
+	}	
+</style>
+<body style="height:100%;overflow:hidden">
+	<div style="min-width:1200px;height:80px;background:#004e90;position:relative">
+		<div style="width:25%;height:70px;float:left;margin-top:10px;margin-left:10px">
+			<div style="width:50px;height:50px;border-radius:50px;border:1px solid #d0d1d1;float:left">
+				<img style="width:100%;height:100%;border-radius:50px" src="/images/6.jpg" alt="">
+			</div>	
+			<div style="float:left;padding:10px">
+				<div style="font-size:12px;color:#fff">$UserName</div>
+				<div style="font-size:12px;color:#0b8fff">$ACharater</div>
+			</div>
+		</div>
+		<div style="float:left;width:49%;margin-top:20px;text-align:center;">
+			<div style="color:#fff;font-size:24px;">鹰洋国际后台管理系统</div>	
+		</div>
+		<div style="width:25%;height:60px;float:right;margin-top:20px;">
+			<div style="height:30px;float:left;color:#fff;font-size:12px;line-height:30px;margin-right:20px">
+				<div style="width:20px;height:20px;overflow:hidden;background:url(/images/manage/topright/1.png);float:left"></div>
+				<a href=""><div style="float:left;margin-top:-3px;margin-left:5px;color:#fff">鹰洋首页</div></a>
+			</div>
+			<div style="height:30px;float:left;color:#fff;font-size:12px;line-height:30px;margin-right:20px;position:relative">
+				<div style="width:20px;height:20px;overflow:hidden;background:url(/images/manage/topright/2.png);float:left;">
+					<a href=""><div style="width:15px;height:15px;border-radius:15px;position:absolute;top:-5px;left:10px;background:#fff;text-align:center;line-height:15px;color:#004e90">1</div></a>
+				</div>
+				<a href=""><div style="float:left;margin-top:-3px;margin-left:5px;color:#fff">邮件</div></a>
+			</div>
+			<div style="height:30px;float:left;color:#fff;font-size:12px;line-height:30px;margin-right:20px;position:relative">
+				<div style="width:20px;height:20px;overflow:hidden;background:url(/images/manage/topright/3.png);float:left;">
+					<a href=""><div style="width:15px;height:15px;border-radius:15px;position:absolute;top:-5px;left:10px;background:#fff;text-align:center;line-height:15px;color:#004e90">1</div></a>
+				</div>
+				<a href=""><div style="float:left;margin-top:-3px;margin-left:5px;color:#fff">通知</div></a>
+			</div>
+			<div style="height:30px;float:left;color:#fff;font-size:12px;line-height:30px;margin-right:20px">
+				<div style="width:20px;height:20px;overflow:hidden;background:url(/images/manage/topright/4.png);float:left"></div>
+				<a href="admin/logout.php"><div style="float:left;margin-top:-3px;margin-left:5px;color:#fff">退出</div></a>
+			</div>
+		</div>		
+	</div>
+	<div style="min-width:1200px;min-height:100px;position:relative;">
+		<div style="width:15%;height:90%;background:#202020;font-size:12px;float:left;overflow:scroll">			
+			<ul class="yxx">
+				<li class="y home" style="line-height:48px;list-style:none;">
+				<div class="yy1">
+					<i bg='images/ico/left_bg01.png' curbg='images/ico/left_bg01.png' style="display:inline-block;width:22px;height:18px;background:url(images/ico/left_bg01.png) no-repeat;position:absolute;top:15px"></i><a style="display:inline-block;margin-top:0px;color:#fff;text-decoration:none;margin-left:30px">主页</a>
+				</div>
+				</li>
+<!--
+EOT;
+	
+	$i=0;
+    $lbj=0;
+	foreach($manage_menu as $group_key=>$group){
+		if(implode($group)==''){
+			continue;
+		}
+		$menu_value=cut_str(get_lang('menu.'.$group_key),4,0);
+        $logo_ary = $menu_logo_ary[$group_key];
+        $logobg = is_file($logo_ary[0]) ? $logo_ary[0] : images/ico/menu_set_ico.jpg;
+        $logocurbg = is_file($logo_ary[1]) ? $logo_ary[1] : images/ico/menu_set_ico_cur.png;
+        $logocurbgr = is_file($logo_ary[2]) ? $logo_ary[2] : images/ico/menu_set_ico_cur.png;
+        $leftbg = $left_bg_ary[$lbj];
+        $lbj = $lbj>=count($left_bg_ary)-1 ? 0 : ++$lbj;
+        $test =count($left_bg_ary);
+        $style = "style='background:#fefefe url($logobg) center no-repeat;'";
+        $class = $i==0 ? ' class="dmenu nobdt"':'class="dmenu"';
+		//var_dump($Ly200Lang);exit;
+
+print <<<EOT
+-->
+				<li class="y" data='1' style="line-height:48px;list-style:none;">
+				<div class="yy1">
+					<i bg='$logobg' curbg='$logocurbg' curbgr='$logocurbgr' style="display:inline-block;width:22px;height:18px;background:url( $logobg) no-repeat;position:absolute;top:15px"></i><a class="Navigation1Txt" style="display:inline-block;margin-top:0px;color:#fff;text-decoration:none;margin-left:30px">$menu_value</a><span class="add">+</span>
+				</div>
+
+					<ul>						
+<!--
+EOT;
+	$i++;
+	foreach($group as $key=>$value){
+		if(!is_array($value)){
+			continue;
+		}
+		$v=get_lang($value[1]);
+		if($value[2]!=1){
+			if($v == "phpMyAdmin"){
+print <<<EOT
+-->
+						<li class="x">
+						<div class="yy2">
+
+							<a class="Navigation2Txt" style="display:inline-block;margin-top:0px;color:#fff;text-decoration:none;margin-left:10px" href="$value[0]" target="_blank">$v</a>
+
+							
+						</div>							
+						</li>
+<!--
+EOT;
+
+			}else{
+print <<<EOT
+-->
+						<li class="x">
+						<div class="yy2">
+
+							<a data="$value[0]" class="Navigation2Txt" style="display:inline-block;margin-top:-0px;color:#fff;text-decoration:none;margin-left:10px">$v</a>
+
+							
+						</div>							
+						</li>
+<!--
+EOT;
+			}
+	}
+}
+
+print <<<EOT
+-->
+						
+					</ul>
+				</li>
+<!--
+EOT;
+
+}
+
+print <<<EOT
+-->
+
+				
+
+			</ul>
+		</div>	
+		<div style="width:81%;float:left;margin-left:30px;height:75%">
+			<div style="height:40px;line-height:40px;border-bottom:1px solid #e5e5e5;color:#666;font-size:12px"><i class='Navigation1' style="display:inline-block;width:15px;height:15px;background:url(images/manage/top/Navigation01.png) no-repeat;position:absolute;top:12px"></i><span style="font-size:14px;margin-left:30px;font-weight:bold" class="Navigation2">主页</span><span class="Navigation4" style="font-size:14px;font-weight:bold;color:#707070;margin-left:5px"></span><span class="Navigation3" style="font-size:12px;color:#999;font-weight:bold;margin-left:5px"></span></div>
+ 			<iframe id="form" style="width:100%;min-height:100%;overflow:auto" src="system/index.php" frameborder="0" scrolling="yes"></iframe>
+ 			<div style="width:81%;height:40px;margin-left:30px;font-size:12px;color:#666;text-align:center;line-height:40px;position:fixed;bottom:0px;left:205px;background:#ececec;border-top:1px solid #dcdcdc">深圳（前海）鹰洋国际贸易有限公司  粤ICP备17118012号</div> 			
+        </div>		
+	</div>
+</body>
+</html>
+<script>
+$(function(){
+	$('.yy2').click(function(){
+		var a=$(this).children('a').attr('data');	
+		$("#form").attr('src',a);
+	})
+	$('.home').click(function(){
+		$("#form").attr('src','system/index.php');
+		$('.yxx').find(".yy1").css('border-left',"2px solid #202020");
+		$('.yxx').find(".yy1").css('border-bottom',"1px solid #202020");
+		$('.yxx').find(".y").attr('data','1');
+		$('.yxx').find(".yy1 i").each(function(){
+			var bg=$(this).attr('bg');	
+			$(this).css('background','url('+bg+') no-repeat');			
+		})
+		$('.yxx').find(".yy1").css('background','#202020');
+		$('.yxx').find(".yy1").css('transition',"background 1s");		
+		$('.yxx').find(".x").stop(true,true).hide(500);
+		$('.yxx').find(".add").html("+");
+	})
+	var flag=true;
+	$(".y").click(function(){	
+		var bg=$(this).find('i').attr('bg');
+		var curbg=$(this).find('i').attr('curbg');	
+		var curbgr=$(this).find('i').attr('curbgr');		
+		$('.Navigation1').html('');
+		$('.Navigation2').html('');
+		$('.Navigation3').html('');
+		$('.Navigation4').html('');
+		var txt=$(this).find('a').html();
+		$('.Navigation2').html(txt);
+		$('.Navigation1').css('background','url('+curbgr+') no-repeat');
+	console.log(flag);			
+		if($(this).attr('data')=='1'){					
+			$('.yxx').find(".y").css('background','#202020');
+			$('.yxx').find(".y ul").css('background','#202020');
+			$('.yxx').find(".yy1").css('border-left',"2px solid #202020");
+			$('.yxx').find(".yy1").css('border-bottom',"1px solid #202020");
+			$('.yxx').find(".yy1").css('background',"#202020");	
+			$('.yxx').find(".yy1").css('transition',"background 1s");		
+			$(this).css("background","#131313");
+			$(this).find('i').css('background','url('+curbg+') no-repeat');
+			$(this).children('ul').css("background","#161616");
+			$(this).find(".yy1").css('border-left',"2px solid #006ac3");
+			$(this).find(".yy1").css('border-bottom',"1px solid #006ac3");
+			$(this).find(".yy1").css('border-bottom-left-radius','5px');
+			$(this).find(".yy1").css('transition',"background 1s");
+			$(this).find(".add").html("-");
+			$(this).find(".x").stop(true,true).show(500);	
+			$(this).attr('data','2');
+		}else if($(this).attr('data')=='2'){	
+			$(this).find(".yy1").css('background','#202020');
+			$(this).find(".yy1").css('transition',"background 1s");		
+			$(this).find(".x").stop(true,true).hide(500);
+			$(this).find(".add").html("+");
+			$(this).find('i').css('background','url('+bg+') no-repeat');	
+			$(this).attr('data','1');
+		}	
+	})
+	$(".x").hover(function(){
+		event.stopPropagation();
+		var b=$(this).attr('border');
+		if(b==1){
+			$(this).css('background','#000');
+			$(this).find('.yy2').css('border-left','1px solid #004E90');
+		}else{
+			$(this).css('background','#000');
+			$(this).find('.yy2').css('border-left','1px solid #006ae1');
+		}		
+	},function(){
+		var b=$(this).attr('border');		
+		if(b==1){
+			$(this).css('background','#161616');
+			$(this).find('.yy2').css('border-left','1px solid #004E90');
+		}else{
+			$(this).css('background','#161616');
+			$(this).find('.yy2').css('border-left','1px solid #202020');
+		}		
+	})
+	$(".x").click(function(event){
+		var txt=$(this).find('a').html();
+		$('.Navigation3').html(txt);
+		$('.Navigation4').html('>');
+		$('.yxx').find(".yy2").css('border-left','1px solid #202020');
+		$('.yxx').find(".x").attr('border','2');
+		$(this).attr('border','1');
+		 event.stopPropagation();
+		 $('.yxx').find(".x").css('border','1px');
+		 $(this).find('.yy2').css('border-left','1px solid #004E90');
+	})	
+})	
+</script>
+
+<!--
+EOT;
+?>-->

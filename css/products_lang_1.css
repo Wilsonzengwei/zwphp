@@ -1,0 +1,51 @@
+.guide{	width:100%;height:40px;background:#fff;border-bottom:1px solid #eee}
+.guide .navigation{width:1230px;height:40px;margin:auto;line-height:40px;}
+.guide .navigation>span{color:#999;font-size:16px;}
+.pro{width:100%;margin-top:0px;background:#efefef}
+.pro_mask{width:1200px;margin:auto;overflow:hidden}
+.pro_mask1{width:1200px;position:relative;min-height:172px;float:left;background:#efefef;margin-top:20px;overflow:hidden;background:#fff}
+#gd{z-index:5;cursor:pointer;width:54px;height:22px;line-height:22px;position:absolute;display:inline-block;top:25px;right:10px;text-align:left;border:1px solid #ddd;padding:2px}
+.gengduo{display:inline-block;text-indent:5px}
+.gengduo_img{position: absolute;top: -1px;right: 4px;display: block;width: 20px;height: 20px;background:url(/images/products/jlt.png);background-position: 4px 10px;}
+#box{z-index:4;width:1216px;position:relative;height:87px;overflow:hidden}
+.chanpsj{width:70px;height:50px;position:absolute;left:20px;top:35px;font-size:14px;}
+#box1{width:1050px;height:120px;position:absolute;left:95px;top:20px;overflow:hidden;}
+.boa{display:inline-block;width:100px;height:50px;border:1px solid #ccc;margin:5px 2px;border-radius:3px;text-align:center;position:relative;}
+.boa_img{display:inline-block;width:98px;height:48px;}
+.boa_queding{position:absolute;right:0px;bottom:0px;display:none}
+.ac{width:900px;height:40px;position:relative;left:20px}
+.jiageqj{width:70px;height:50px;position:absolute;left:0;top:5px;font-size:14px}
+.pos{position:absolute;left:72px;top:0}
+.min_max{display:inline-block;width:60px;height:25px;border:1px solid #ccc;margin:3px 3px;border-radius:3px;text-align:center;color:#999}
+.qujian{display:inline-block;background:#fff;cursor:pointer;width:60px;height:25px;border:1px solid #ccc;margin:3px 3px;border-radius:3px;text-align:center;color:#999}
+.qujian:hover{background:#2962ff;border:1px solid #2962ff;color:#f2f2f2;}
+.ac1{width:900px;position:relative;height:40px;left:20px}
+.f_14{font-size:14px}
+.paixufs{width:70px;height:50px;position:absolute;left:0;top:5px;font-size:14px}
+.hie{position:absolute;left:74px;top:5px}
+.hie_list{position:relative;margin-left:10px}
+.ccc{display:inline-block;width:7px;height:19px;}
+.selling{width:1200px;max-height:2040px;background:#efefef;margin:25px auto;overflow:hidden;}
+.selling_bg{max-height:1962px;width:100%;overflow:hidden;background:#efefef;}	
+.selling_content{width:218px;height:305px;float:left;background:#fff;border:1px solid #ccc;margin-right:25px;margin-top:20px;}
+.selling_center{width:218px;height:305px;overflow:hidden;margin:auto;}
+.selling_content:hover{border:1px solid #2962ff;}
+.selling_content .selling_center .selling_img{display:block;width:218px;height:218px;overflow:hidden;}
+.selling_content .selling_center .selling_img>img{width:100%;height:100%;}
+.selling_content .selling_center .Commodity_price{
+	display:inline-block;width:185px;height:16px;color:#cc0000;font-size:16px;font-family:Arial;margin-left:16px;margin-top:10px;font-weight:600;
+}
+.selling_content .selling_center .Commodity_namea{
+	display:block;width:185px;max-height:32px;overflow:hidden;margin:5px auto 0px auto;position:relative;
+}
+.selling_content .selling_center .Commodity_name{
+	font-size:12px;font-family:'Microsoft YaHei';width:185px;
+	max-height:48px;overflow:hidden;line-height:16px;color:#666;
+}
+.slh{
+	width:12px;height:16px;background:url(/images/index/slh.png);position:absolute;bottom:0px;right:0px;
+}
+.selling_content .selling_center .Commodity_namea:hover{
+	text-decoration:underline;
+}
+.hie_list_color{color:#2962ff;}
